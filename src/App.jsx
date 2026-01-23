@@ -1253,8 +1253,6 @@ function HomePage({ setCurrentPage }) {
         </div>
       </div>
       
-      /* Fort Levels Quick Reference - Removed */
-      
       {/* Footer */}
       <footer className="relative z-10 bg-stone-900/90 border-t border-amber-700/30 py-6 px-4 text-center">
         <p className="text-stone-400 text-sm">
@@ -2364,12 +2362,16 @@ function DKPCalculatorPage() {
   };
 
   const playersWithDKP = useMemo(() => {
-    return playerData.map(player => ({
-      ...player,
-      dkp: calculateDKP(player),
-      killPoints: (player.t4Kills * t4KillPoints) + (player.t5Kills * t5KillPoints),
-      deathPoints: (player.t4Deaths * t4DeathPoints) + (player.t5Deaths * t5DeathPoints),
-    }));
+    return playerData.map(player => {
+      const killPoints = (player.t4Kills * t4KillPoints) + (player.t5Kills * t5KillPoints);
+      const deathPoints = (player.t4Deaths * t4DeathPoints) + (player.t5Deaths * t5DeathPoints);
+      return {
+        ...player,
+        dkp: killPoints + deathPoints,
+        killPoints,
+        deathPoints,
+      };
+    });
   }, [playerData, t4KillPoints, t4DeathPoints, t5KillPoints, t5DeathPoints]);
 
   const filteredAndSortedPlayers = useMemo(() => {
