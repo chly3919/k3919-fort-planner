@@ -2355,12 +2355,6 @@ function DKPCalculatorPage() {
     reader.readAsArrayBuffer(file);
   };
 
-  const calculateDKP = (player) => {
-    const killPoints = (player.t4Kills * t4KillPoints) + (player.t5Kills * t5KillPoints);
-    const deathPoints = (player.t4Deaths * t4DeathPoints) + (player.t5Deaths * t5DeathPoints);
-    return killPoints + deathPoints;
-  };
-
   const playersWithDKP = useMemo(() => {
     return playerData.map(player => {
       const killPoints = (player.t4Kills * t4KillPoints) + (player.t5Kills * t5KillPoints);
