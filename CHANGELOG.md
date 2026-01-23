@@ -1,6 +1,6 @@
- Changelog
+# Changelog
 
-All notable changes to Rise of Kingdoms Tools will be documented here.
+All notable changes to Rise of Kingdoms Tools will be documented in this file.
 
 ---
 
@@ -125,3 +125,39 @@ All notable changes to Rise of Kingdoms Tools will be documented here.
 - **SheetJS (xlsx)** - Excel file parsing
 
 ---
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/k3919-fort-planner.git
+
+# Navigate to project directory
+cd k3919-fort-planner
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
+---
+
+## Contributing
+
+Contributions are welcome! Feel free to:
+- Add new languages
+- Report bugs
+- Suggest new features
+- Submit pull requests
+
+---
+
+## License
+
+MIT License - feel free to use this project for your own kingdom!
+
+---
+
+Made with ❤️ for Kingdom 3919
