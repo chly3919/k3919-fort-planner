@@ -161,10 +161,6 @@ Contributions are welcome! Feel free to:
 
 ---
 
-## License
-
-MIT License - feel free to use this project for your own kingdom!
-
 ---
 
 Made with ❤️ for Kingdom 3919
