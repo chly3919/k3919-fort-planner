@@ -9,8 +9,12 @@ All notable changes to Rise of Kingdoms Tools will be documented in this file.
 ### 🌍 Multi-Language Support
 - **Added Chinese (中文)** - Complete Simplified Chinese translations
 - **Added Vietnamese (Tiếng Việt)** - Complete Vietnamese translations
+- **Added French (Français)** - Complete French translations
+- **Added Spanish (Español)** - Complete Spanish translations
+- **Added German (Deutsch)** - Complete German translations
 - **100% translation coverage** across Fort Calculator, Barbarian Calculator, and DKP Calculator
 - Lyceum remains English-only (quiz questions are in English)
+- **7 languages now supported**: English, Arabic, Chinese, Vietnamese, French, Spanish, German
 
 ### 🎨 UI Improvements
 - **New language dropdown selector** - Replaced flag buttons with elegant dropdown menu
@@ -114,6 +118,9 @@ All notable changes to Rise of Kingdoms Tools will be documented in this file.
 | Arabic | `ar` | ✅ Complete (RTL) |
 | Chinese | `zh` | ✅ Complete |
 | Vietnamese | `vi` | ✅ Complete |
+| French | `fr` | ✅ Complete |
+| Spanish | `es` | ✅ Complete |
+| German | `de` | ✅ Complete |
 
 ---
 
