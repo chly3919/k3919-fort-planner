@@ -2,6 +2,7 @@ import React, { useState, useMemo, createContext, useContext } from 'react';
 import { Calculator, Swords, Clock, Trophy, Home, Flame, ChevronRight, Shield, Target, Zap, Search, BookOpen, Globe } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import LYCEUM_DATA from './lyceumData';
+import { Analytics } from '@vercel/analytics/react';
 
 // Translations
 const translations = {
@@ -3393,6 +3394,7 @@ function AppContent() {
       {currentPage === 'barbarian' && <BarbarianCalculatorPage />}
       {currentPage === 'lyceum' && <LyceumPage />}
       {currentPage === 'dkp' && <DKPCalculatorPage />}
+      <Analytics />
     </div>
   );
 }
