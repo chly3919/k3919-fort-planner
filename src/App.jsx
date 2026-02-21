@@ -215,6 +215,7 @@ function Navigation({ currentPage, setCurrentPage }) {
               <NavButton page="barbarian" icon={<Target className="w-4 h-4" />} label={t('barbCalc')} />
               <NavButton page="lyceum" icon={<BookOpen className="w-4 h-4" />} label={t('lyceum')} />
               <NavButton page="dkp" icon={<Swords className="w-4 h-4" />} label={t('dkpCalc')} />
+              <NavButton page="ark" icon={<EyeOfHorus className="w-4 h-4" />} label={t('AOO Guide')} />
             </div>
           </div>
         )}
