@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Shield, Swords, Target, Users, Trophy, Zap, ChevronDown, ChevronUp, Clock, MapPin, Star } from 'lucide-react';
+import { Shield, Swords, Target, Users, Trophy, Zap, Clock, MapPin } from 'lucide-react';
+import QuickStat from './components/ark/QuickStat';
+import ObjectiveCard from './components/ark/ObjectiveCard';
+import RoleCard from './components/ark/RoleCard';
+import PhaseCard from './components/ark/PhaseCard';
+import StrategyCard from './components/ark/StrategyCard';
+import SeasonAccordion from './components/ark/SeasonAccordion';
+import TroopTypeSection from './components/ark/TroopTypeSection';
+import ProTip from './components/ark/ProTip';
 
 // Ark of Osiris Guide Component
 // Data sourced from riseofkingdomsguides.com (February 2026)
@@ -650,182 +658,6 @@ export default function ArkOfOsirisGuide() {
               </div>
             </div>
           )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// Helper Components
-function QuickStat({ icon, label, value }) {
-  return (
-    <div className="bg-stone-800/80 rounded-lg p-4 border border-amber-700/30 text-center">
-      <div className="text-amber-500 flex justify-center mb-2">{icon}</div>
-      <p className="text-stone-400 text-xs">{label}</p>
-      <p className="text-white font-bold text-lg">{value}</p>
-    </div>
-  );
-}
-
-function ObjectiveCard({ name, points, desc, color }) {
-  const colorClasses = {
-    amber: 'border-amber-500 bg-amber-900/20',
-    blue: 'border-blue-500 bg-blue-900/20',
-    green: 'border-green-500 bg-green-900/20',
-    purple: 'border-purple-500 bg-purple-900/20',
-  };
-
-  const textColors = {
-    amber: 'text-amber-400',
-    blue: 'text-blue-400',
-    green: 'text-green-400',
-    purple: 'text-purple-400',
-  };
-
-  return (
-    <div className={`rounded-lg p-4 border ${colorClasses[color]}`}>
-      <h4 className={`font-bold ${textColors[color]}`}>{name}</h4>
-      <p className="text-white font-semibold text-sm">{points}</p>
-      <p className="text-stone-400 text-sm">{desc}</p>
-    </div>
-  );
-}
-
-function RoleCard({ role, emoji, count, duties, color }) {
-  const borderColors = {
-    red: 'border-red-500',
-    blue: 'border-blue-500',
-    amber: 'border-amber-500',
-    green: 'border-green-500',
-    purple: 'border-purple-500',
-    cyan: 'border-cyan-500',
-  };
-
-  return (
-    <div className={`bg-stone-800/80 rounded-lg p-4 border-l-4 ${borderColors[color]}`}>
-      <div className="flex items-center justify-between mb-2">
-        <h4 className="text-white font-bold flex items-center gap-2">
-          <span className="text-xl">{emoji}</span>
-          {role}
-        </h4>
-        <span className="text-stone-400 text-sm">{count}</span>
-      </div>
-      <ul className="text-stone-300 text-sm space-y-1">
-        {duties.map((duty, i) => (
-          <li key={i}>• {duty}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function PhaseCard({ phase, time, name, actions }) {
-  return (
-    <div className="flex gap-4 items-start">
-      <div className="bg-amber-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">
-        {phase}
-      </div>
-      <div className="flex-1">
-        <div className="flex items-center gap-3 mb-1">
-          <span className="text-amber-400 font-mono text-sm">{time}</span>
-          <span className="text-white font-bold">{name}</span>
-        </div>
-        <ul className="text-stone-300 text-sm">
-          {actions.map((action, i) => (
-            <li key={i}>• {action}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-function StrategyCard({ title, icon, tips }) {
-  return (
-    <div className="bg-stone-800/80 rounded-lg p-4 border border-amber-700/30">
-      <h4 className="text-amber-300 font-bold mb-3 flex items-center gap-2">
-        <span className="text-xl">{icon}</span>
-        {title}
-      </h4>
-      <ul className="text-stone-300 text-sm space-y-1">
-        {tips.map((tip, i) => (
-          <li key={i}>• {tip}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function SeasonAccordion({ season, title, subtitle, expanded, onToggle, children }) {
-  return (
-    <div className="bg-stone-800/80 rounded-lg border border-amber-700/30 overflow-hidden">
-      <button 
-        onClick={onToggle}
-        className="w-full p-4 flex items-center justify-between text-left hover:bg-stone-700/50 transition-colors"
-      >
-        <div>
-          <h3 className="text-amber-300 font-bold">{title}</h3>
-          <p className="text-stone-400 text-sm">{subtitle}</p>
-        </div>
-        {expanded ? (
-          <ChevronUp className="w-5 h-5 text-amber-400" />
-        ) : (
-          <ChevronDown className="w-5 h-5 text-amber-400" />
-        )}
-      </button>
-      {expanded && (
-        <div className="p-4 pt-0 border-t border-stone-700">
-          {children}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function TroopTypeSection({ title, pairings }) {
-  return (
-    <div>
-      <h4 className="text-amber-400 font-semibold text-sm mb-2 mt-4">{title}</h4>
-      <div className="space-y-2">
-        {pairings.map((pairing, i) => (
-          <CommanderPairing key={i} {...pairing} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function CommanderPairing({ type, names, role, roleColor }) {
-  const roleColors = {
-    red: 'bg-red-600',
-    blue: 'bg-blue-600',
-    green: 'bg-green-600',
-    purple: 'bg-purple-600',
-  };
-
-  return (
-    <div className="flex items-center justify-between bg-stone-900/50 rounded-lg p-3 border border-stone-700">
-      <div>
-        <span className="text-stone-400 text-xs">{type}</span>
-        <p className="text-white font-semibold">{names}</p>
-      </div>
-      <span className={`${roleColors[roleColor]} text-white text-xs px-2 py-1 rounded`}>
-        {role}
-      </span>
-    </div>
-  );
-}
-
-function ProTip({ number, title, content }) {
-  return (
-    <div className="bg-stone-800/80 rounded-lg p-4 border border-amber-700/30">
-      <div className="flex items-start gap-3">
-        <div className="bg-amber-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">
-          {number}
-        </div>
-        <div>
-          <h4 className="text-amber-300 font-bold mb-1">{title}</h4>
-          <p className="text-stone-300 text-sm">{content}</p>
         </div>
       </div>
     </div>
