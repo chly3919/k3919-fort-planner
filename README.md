@@ -1,89 +1,97 @@
-# RoK Tools - Ark of Osiris Guide
+# RoK Tools
 
-A React-based Rise of Kingdoms tools app featuring a comprehensive Ark of Osiris guide.
+A JavaScript React app for Rise of Kingdoms utilities, including:
+- Fort calculator
+- Barbarian calculator
+- Lyceum search
+- DKP calculator
+- Ark of Osiris guide
+
+## Stack
+
+- React 18 (JavaScript)
+- Vite 5
+- Tailwind CSS 3
+- Lucide React icons
+- XLSX file parsing
 
 ## Data Source
-Commander pairings and tier list data sourced from [riseofkingdomsguides.com](https://riseofkingdomsguides.com) (February 2026).
 
-## Quick Start
+Ark of Osiris commander pairings and tier references are sourced from [riseofkingdomsguides.com](https://riseofkingdomsguides.com) (February 2026).
 
-### Option 1: Deploy to Vercel (Easiest)
+## Project Structure
 
-1. Extract this zip
-2. Create a GitHub repository and push these files:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/rok-tools.git
-   git push -u origin main
-   ```
-3. Go to [vercel.com](https://vercel.com)
-4. Click "Add New Project"
-5. Import your GitHub repository
-6. Click "Deploy"
-7. Done! Your site will be live at `your-project.vercel.app`
+```
+rok-tools/
+├── index.html
+├── vite.config.js
+├── src/
+│   ├── main.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   ├── pages/
+│   ├── components/
+│   ├── hooks/
+│   ├── data.js
+│   ├── translations.js
+└── package.json
+```
 
-### Option 2: Run Locally
+## Local Development
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Run dev server (configured for port `3000`):
+
+```bash
 npm start
 ```
 
-Visit http://localhost:3000
+or
 
-### Option 3: Build for Production
+```bash
+npm run dev
+```
+
+Open: `http://localhost:3000`
+
+## Build
+
+Create a production build:
 
 ```bash
 npm run build
 ```
 
-The `build/` folder contains static files you can host anywhere.
+By default, Vite outputs static assets to the `dist/` folder.
 
-## File Structure
+Preview production build locally:
 
-```
-rok-tools/
-├── public/
-│   └── index.html
-├── src/
-│   ├── App.jsx              # Main app with navigation
-│   ├── ArkOfOsirisGuide.jsx # The AoO guide component
-│   ├── index.js             # Entry point
-│   └── index.css            # Styles
-├── package.json
-├── tailwind.config.js
-└── README.md
+```bash
+npm run preview
 ```
 
-## Integrating with Your Existing App
+## Deploy
 
-If you already have a RoK Tools app and just want to add the AoO Guide:
+### Vercel
 
-1. Copy `src/ArkOfOsirisGuide.jsx` to your `src/` folder
-2. Add this import to your App.jsx:
-   ```javascript
-   import ArkOfOsirisGuide from './ArkOfOsirisGuide';
-   ```
-3. Add a nav button:
-   ```javascript
-   <NavButton page="aoo" icon={<Shield className="w-4 h-4" />} label="AoO Guide" />
-   ```
-4. Add the page render:
-   ```javascript
-   {currentPage === 'aoo' && <ArkOfOsirisGuide />}
-   ```
+1. Push this repo to GitHub.
+2. Import the repo in Vercel.
+3. Framework preset: **Vite** (usually auto-detected).
+4. Build command: `npm run build`
+5. Output directory: `dist`
+6. Deploy.
 
-## Features
+## Scripts
 
-- **Overview**: Game mode explanation, objectives, teleport system
-- **Team Roles**: Rally leaders, garrison defenders, ark runners, etc.
-- **Strategy**: Pre-battle prep, lane play, ark fighting tactics
-- **Commanders**: Season-specific pairings (S1, S2, S3, SoC) with tier ratings
-- **Scoring**: Points breakdown for all objectives
-- **Pro Tips**: Expert strategies from riseofkingdomsguides.com
+- `npm start` → Vite dev server
+- `npm run dev` → Vite dev server
+- `npm run build` → Production build
+- `npm run preview` → Preview built app
 
 ## License
 
